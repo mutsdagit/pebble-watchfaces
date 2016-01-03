@@ -9,8 +9,14 @@
     "resources": {
         "media": [
             {
-                "file": "images/stars-sun.png",
-                "name": "IMAGE_PH_TRIANGLE",
+                "file": "images/ph_triangle_90.png",
+                "name": "IMAGE_TRIANGLE_90",
+                "targetPlatforms": null,
+                "type": "png"
+            },
+            {
+                "file": "images/ph_triangle.png",
+                "name": "IMAGE_TRIANGLE",
                 "targetPlatforms": null,
                 "type": "png"
             },
@@ -21,28 +27,16 @@
                 "type": "png"
             },
             {
-                "file": "images/sun.png",
-                "name": "IMAGE_ARAW",
-                "targetPlatforms": null,
-                "type": "png"
-            },
-            {
                 "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
-                "name": "FONT_CRACKED_24",
+                "name": "FONT_CRACKED_20",
                 "targetPlatforms": null,
                 "type": "font"
             },
             {
                 "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
-                "name": "FONT_CRACKED_48",
+                "name": "FONT_CRACKED_44",
                 "targetPlatforms": null,
                 "type": "font"
-            },
-            {
-                "file": "images/ph_flag.png",
-                "name": "IMAGE_FLAG",
-                "targetPlatforms": null,
-                "type": "png"
             },
             {
                 "file": "images/background.png",
