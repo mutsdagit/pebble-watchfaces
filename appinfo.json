@@ -9,22 +9,40 @@
     "resources": {
         "media": [
             {
-                "file": "images/sun-w-rays-th.png",
-                "name": "IMAGE_SUN",
+                "file": "images/stars-sun.png",
+                "name": "IMAGE_PH_TRIANGLE",
                 "targetPlatforms": null,
                 "type": "png"
+            },
+            {
+                "file": "images/stars_sun.png",
+                "name": "IMAGE_STARS",
+                "targetPlatforms": null,
+                "type": "png"
+            },
+            {
+                "file": "images/sun.png",
+                "name": "IMAGE_ARAW",
+                "targetPlatforms": null,
+                "type": "png"
+            },
+            {
+                "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
+                "name": "FONT_CRACKED_24",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
+                "name": "FONT_CRACKED_48",
+                "targetPlatforms": null,
+                "type": "font"
             },
             {
                 "file": "images/ph_flag.png",
                 "name": "IMAGE_FLAG",
                 "targetPlatforms": null,
                 "type": "png"
-            },
-            {
-                "file": "fonts/din_schablonierschrift_cracked.zip",
-                "name": "FONT_CRACKED_40",
-                "targetPlatforms": null,
-                "type": "font"
             },
             {
                 "file": "images/background.png",

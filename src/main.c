@@ -1,6 +1,6 @@
 #include <pebble.h>
 static Window *s_main_window;
-static TextLayer *s_time_layer, *s_date_layer, *s_pinas_layer;
+static TextLayer *s_time_layer, *s_date_layer, *s_pinas_layer, *s_blue_layer, *s_red_layer;
 static GFont s_time_font, s_date_font;
 static BitmapLayer *s_background_layer;
 static GBitmap *s_background_bitmap;
@@ -17,7 +17,7 @@ static void update_time() {
 
   // Copy date into buffer from tm structure
   static char date_buffer[16];
-  strftime(date_buffer, sizeof(date_buffer), "%a %d %b", tick_time);
+  strftime(date_buffer, sizeof(date_buffer), "%d %b", tick_time);
   
   // Display this time on the TextLayer
   text_layer_set_text(s_time_layer, s_buffer);
@@ -35,60 +35,73 @@ static void main_window_load(Window *window) {
   GRect bounds = layer_get_bounds(window_layer);
   
   // Create GBitmap
-  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BACKGROUND);
+  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_PH_TRIANGLE);
   
   // Create BitmapLayer to display the GBitmap
-  s_background_layer = bitmap_layer_create(bounds);
-
-  // Create the TextLayer with specific bounds
-  s_time_layer = text_layer_create(
-      GRect(0, PBL_IF_ROUND_ELSE(58, 52), bounds.size.w, 65));
+  s_background_layer = bitmap_layer_create(GRect(0, 60, 51, 60));
   
+  // Set the correct compositing mode
+  bitmap_layer_set_compositing_mode(s_background_layer, GCompOpSet);
+
   // Create GFont
-  s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_CRACKED_40));
+  s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_CRACKED_48));
   
   //Create date font
-  s_date_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_PERFECT_DOS_20));
+  s_date_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_CRACKED_24));
 
-  // Improve the layout to be more like a watchface
-  text_layer_set_background_color(s_time_layer, GColorYellow);
+  // Create Time TextLayer
+  s_time_layer = text_layer_create(
+      GRect(0, PBL_IF_ROUND_ELSE(58, 52), 130, 65));
+  
+  text_layer_set_background_color(s_time_layer, GColorWhite);
   text_layer_set_text_color(s_time_layer, GColorBlack);
-  //text_layer_set_text(s_time_layer, "00:00");
-  //text_layer_set_font(s_time_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
-  // Apply new font to TextLayer
   text_layer_set_font(s_time_layer, s_time_font);
-  text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
+  text_layer_set_text_alignment(s_time_layer, GTextAlignmentRight);
  
-   // Create Pilipinas TextLayer
+  // Create Pilipinas TextLayer
   s_pinas_layer = text_layer_create(
-      GRect(0, 30, bounds.size.w, 30));
+      GRect(0, 30, 130, 30));
  
   text_layer_set_text_color(s_pinas_layer, GColorWhite);
-  text_layer_set_background_color(s_pinas_layer, GColorBlue);
-  text_layer_set_text(s_pinas_layer, "Pilipinas");
+  text_layer_set_background_color(s_pinas_layer, GColorClear);
+  text_layer_set_text(s_pinas_layer, "PILIPINAS");
   text_layer_set_font(s_pinas_layer, s_date_font);
-  text_layer_set_text_alignment(s_pinas_layer, GTextAlignmentCenter);
+  text_layer_set_text_alignment(s_pinas_layer, GTextAlignmentRight);
+
+  // Create Blue TextLayer
+  s_blue_layer = text_layer_create(
+      GRect(0, 0, bounds.size.w, bounds.size.h/2));
+  text_layer_set_background_color(s_blue_layer, GColorBlue);
+  // Create Red TextLayer
+  s_red_layer = text_layer_create(
+      GRect(0, bounds.size.h/2, bounds.size.w, bounds.size.h/2));
+  text_layer_set_background_color(s_red_layer, GColorRed);
   
-  // Create date TextLayer
+  // Create Date TextLayer
   s_date_layer = text_layer_create(
-      GRect(0, 120, bounds.size.w, 60));
+      GRect(0, 120, 130, 60));
  
   text_layer_set_text_color(s_date_layer, GColorWhite);
-  text_layer_set_background_color(s_date_layer, GColorRed);
+  text_layer_set_background_color(s_date_layer, GColorClear);
   text_layer_set_font(s_date_layer, s_date_font);
-  text_layer_set_text_alignment(s_date_layer, GTextAlignmentCenter);
-
-  // Set the bitmap onto the layer and add to the window
-//   bitmap_layer_set_bitmap(s_background_layer, s_background_bitmap);
-//   layer_add_child(window_layer, bitmap_layer_get_layer(s_background_layer));
+  text_layer_set_text_alignment(s_date_layer, GTextAlignmentRight);
  
-  // Add Pilipinas text to Window
+  //Add flag colors to Window
+  layer_add_child(window_layer, text_layer_get_layer(s_blue_layer));
+  layer_add_child(window_layer, text_layer_get_layer(s_red_layer));
+  
+  // Add Pilipinas to Window
   layer_add_child(window_layer, text_layer_get_layer(s_pinas_layer));
   
-  // Add it as a child layer to the Window's root layer
-  layer_add_child(window_layer, text_layer_get_layer(s_time_layer));
   // Add date to Window
   layer_add_child(window_layer, text_layer_get_layer(s_date_layer));
+
+  // Add it as a child layer to the Window's root layer
+  layer_add_child(window_layer, text_layer_get_layer(s_time_layer));
+
+  // Set the bitmap onto the layer and add to the window
+  bitmap_layer_set_bitmap(s_background_layer, s_background_bitmap);
+  layer_add_child(window_layer, bitmap_layer_get_layer(s_background_layer));
 }
 
 static void main_window_unload(Window *window) {
@@ -110,7 +123,9 @@ static void main_window_unload(Window *window) {
   
   //Destroy Pinas text Layer
   text_layer_destroy(s_pinas_layer);
-  
+  text_layer_destroy(s_blue_layer);
+  text_layer_destroy(s_red_layer);
+
 }
 
 static void init() {
@@ -123,7 +138,7 @@ static void init() {
     .unload = main_window_unload
   });
   
-  window_set_background_color(s_main_window, GColorBlue);
+  window_set_background_color(s_main_window, GColorClear);
 
   // Show the Window on the watch, with animated=true
   window_stack_push(s_main_window, true);
