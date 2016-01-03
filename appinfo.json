@@ -1,0 +1,61 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "mutya.aller@gmail.com",
+    "longName": "Muty Watchface",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/sun-w-rays-th.png",
+                "name": "IMAGE_SUN",
+                "targetPlatforms": null,
+                "type": "png"
+            },
+            {
+                "file": "images/ph_flag.png",
+                "name": "IMAGE_FLAG",
+                "targetPlatforms": null,
+                "type": "png"
+            },
+            {
+                "file": "fonts/din_schablonierschrift_cracked.zip",
+                "name": "FONT_CRACKED_40",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "images/background.png",
+                "name": "IMAGE_BACKGROUND",
+                "targetPlatforms": null,
+                "type": "png"
+            },
+            {
+                "file": "fonts/perfect-dos-vga.ttf",
+                "name": "FONT_PERFECT_DOS_20",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/perfect-dos-vga.ttf",
+                "name": "FONT_PERFECT_DOS_48",
+                "targetPlatforms": null,
+                "type": "font"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "Muty Watchface",
+    "targetPlatforms": [
+        "aplite",
+        "basalt",
+        "chalk"
+    ],
+    "uuid": "7673530b-bf5f-4dd1-ab8a-71379847ced6",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
