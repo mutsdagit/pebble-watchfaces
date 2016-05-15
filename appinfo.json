@@ -4,44 +4,29 @@
         ""
     ],
     "companyName": "mutya.aller@gmail.com",
+    "enableMultiJS": false,
     "longName": "Muty Watchface",
     "projectType": "native",
     "resources": {
         "media": [
             {
-                "file": "images/stars-sun.png",
-                "name": "IMAGE_PH_TRIANGLE",
-                "targetPlatforms": null,
-                "type": "png"
-            },
-            {
-                "file": "images/stars_sun.png",
-                "name": "IMAGE_STARS",
-                "targetPlatforms": null,
-                "type": "png"
-            },
-            {
-                "file": "images/sun.png",
-                "name": "IMAGE_ARAW",
-                "targetPlatforms": null,
-                "type": "png"
-            },
-            {
-                "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
-                "name": "FONT_CRACKED_24",
-                "targetPlatforms": null,
+                "file": "fonts/ubuntu-r.ttf",
+                "name": "FONT_UBUNTU_20",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
                 "type": "font"
             },
             {
-                "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
-                "name": "FONT_CRACKED_48",
-                "targetPlatforms": null,
-                "type": "font"
-            },
-            {
-                "file": "images/ph_flag.png",
-                "name": "IMAGE_FLAG",
-                "targetPlatforms": null,
+                "file": "images/unruly_logo_48.png",
+                "name": "IMAGE_UNRULY_LOGO_48",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
                 "type": "png"
             },
             {
@@ -59,6 +44,18 @@
             {
                 "file": "fonts/perfect-dos-vga.ttf",
                 "name": "FONT_PERFECT_DOS_48",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
+                "name": "FONT_CRACKED_20",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
+                "name": "FONT_CRACKED_44",
                 "targetPlatforms": null,
                 "type": "font"
             }
