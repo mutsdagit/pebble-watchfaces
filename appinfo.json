@@ -10,24 +10,24 @@
     "resources": {
         "media": [
             {
-                "file": "fonts/ubuntu-r.ttf",
-                "name": "FONT_UBUNTU_20",
-                "targetPlatforms": [
-                    "aplite",
-                    "basalt",
-                    "chalk"
-                ],
-                "type": "font"
-            },
-            {
-                "file": "images/unruly_logo_48.png",
-                "name": "IMAGE_UNRULY_LOGO_48",
+                "file": "images/unruly_logo.png",
+                "name": "IMAGE_UNRULY_LOGO",
                 "targetPlatforms": [
                     "aplite",
                     "basalt",
                     "chalk"
                 ],
                 "type": "png"
+            },
+            {
+                "file": "fonts/UbuntuMono-B.ttf",
+                "name": "FONT_UBUNTUMONO_20",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "font"
             },
             {
                 "file": "images/background.png",
@@ -49,13 +49,13 @@
             },
             {
                 "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
-                "name": "FONT_CRACKED_20",
+                "name": "FONT_CRACKED_50",
                 "targetPlatforms": null,
                 "type": "font"
             },
             {
                 "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
-                "name": "FONT_CRACKED_44",
+                "name": "FONT_CRACKED_20",
                 "targetPlatforms": null,
                 "type": "font"
             }

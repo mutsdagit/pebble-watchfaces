@@ -1,7 +1,6 @@
 #include <pebble.h>
 static Window *s_main_window;
-static TextLayer *s_time_layer, *s_date_layer, *s_blue_layer;
-  //, *s_red_layer;
+static TextLayer *s_time_layer, *s_date_layer, *s_bglayer;
 static GFont s_time_font, s_date_font;
 static BitmapLayer *s_background_layer;
 static GBitmap *s_background_bitmap;
@@ -36,41 +35,37 @@ static void main_window_load(Window *window) {
   GRect bounds = layer_get_bounds(window_layer);
   
   // Create GBitmap
-  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_UNRULY_LOGO_48);
+  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_UNRULY_LOGO);
   
   // Create BitmapLayer to display the GBitmap
-  s_background_layer = bitmap_layer_create(GRect(35, 0, 100, 90));
+  s_background_layer = bitmap_layer_create(GRect(35, 0, 110, 90));
   
   // Set the correct compositing mode
   bitmap_layer_set_compositing_mode(s_background_layer, GCompOpSet);
 
   // Create GFont
-  s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_CRACKED_44));
+  s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_CRACKED_50));
   
   //Create date font
-  s_date_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_UBUNTU_20));
+  s_date_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_UBUNTUMONO_20));
  
   // Create Time TextLayer
   s_time_layer = text_layer_create(
-      GRect(0, 55, 130, 48));
+      GRect(0, 65, 140, 50));
  
   text_layer_set_text_color(s_time_layer, GColorBlack);
   text_layer_set_background_color(s_time_layer, GColorClear);
   text_layer_set_font(s_time_layer, s_time_font);
   text_layer_set_text_alignment(s_time_layer, GTextAlignmentRight);
 
-  // Create Blue TextLayer
-  s_blue_layer = text_layer_create(
+  // Create BG TextLayer
+  s_bglayer = text_layer_create(
       GRect(0, 0, bounds.size.w, bounds.size.h));
-  text_layer_set_background_color(s_blue_layer, GColorWhite);
-  // Create Red TextLayer
-//   s_red_layer = text_layer_create(
-//       GRect(0, bounds.size.h/2, bounds.size.w, bounds.size.h/2));
-//   text_layer_set_background_color(s_red_layer, GColorRed);
+  text_layer_set_background_color(s_bglayer, GColorWhite);
   
   // Create Date TextLayer
   s_date_layer = text_layer_create(
-      GRect(0, 110, 140, 50));
+      GRect(0, 130, 140, 30));
  
   text_layer_set_text_color(s_date_layer, GColorBlack);
   text_layer_set_background_color(s_date_layer, GColorClear);
@@ -78,7 +73,7 @@ static void main_window_load(Window *window) {
   text_layer_set_text_alignment(s_date_layer, GTextAlignmentRight);
  
   //Add flag colors to Window
-  layer_add_child(window_layer, text_layer_get_layer(s_blue_layer));
+  layer_add_child(window_layer, text_layer_get_layer(s_bglayer));
 //   layer_add_child(window_layer, text_layer_get_layer(s_red_layer));
   
   // Add date to Window
@@ -110,7 +105,7 @@ static void main_window_unload(Window *window) {
   text_layer_destroy(s_date_layer);
   
   //Destroy flag text Layer
-  text_layer_destroy(s_blue_layer);
+  text_layer_destroy(s_bglayer);
 //   text_layer_destroy(s_red_layer);
 
 }
