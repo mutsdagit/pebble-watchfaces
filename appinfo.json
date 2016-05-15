@@ -4,43 +4,26 @@
         ""
     ],
     "companyName": "mutya.aller@gmail.com",
+    "enableMultiJS": false,
     "longName": "Muty Watchface",
     "projectType": "native",
     "resources": {
         "media": [
             {
-                "file": "images/stars-sun.png",
-                "name": "IMAGE_PH_TRIANGLE",
+                "file": "images/girl_android_128.png",
+                "name": "IMAGE_ANDROID_128",
                 "targetPlatforms": null,
                 "type": "png"
             },
             {
-                "file": "images/stars_sun.png",
-                "name": "IMAGE_STARS",
+                "file": "images/girl_android_48.png",
+                "name": "IMAGE_ANDROID_48",
                 "targetPlatforms": null,
                 "type": "png"
             },
             {
-                "file": "images/sun.png",
-                "name": "IMAGE_ARAW",
-                "targetPlatforms": null,
-                "type": "png"
-            },
-            {
-                "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
-                "name": "FONT_CRACKED_24",
-                "targetPlatforms": null,
-                "type": "font"
-            },
-            {
-                "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
-                "name": "FONT_CRACKED_48",
-                "targetPlatforms": null,
-                "type": "font"
-            },
-            {
-                "file": "images/ph_flag.png",
-                "name": "IMAGE_FLAG",
+                "file": "images/girl_android_24.png",
+                "name": "IMAGE_ANDROID_24",
                 "targetPlatforms": null,
                 "type": "png"
             },
@@ -52,13 +35,25 @@
             },
             {
                 "file": "fonts/perfect-dos-vga.ttf",
-                "name": "FONT_PERFECT_DOS_20",
+                "name": "FONT_PERFECT_DOS_48",
                 "targetPlatforms": null,
                 "type": "font"
             },
             {
                 "file": "fonts/perfect-dos-vga.ttf",
-                "name": "FONT_PERFECT_DOS_48",
+                "name": "FONT_PERFECT_DOS_20",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
+                "name": "FONT_CRACKED_44",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
+                "name": "FONT_CRACKED_20",
                 "targetPlatforms": null,
                 "type": "font"
             }
