@@ -1,7 +1,10 @@
 {
-    "appKeys": {},
+    "appKeys": {
+        "KEY_CONDITIONS": 1,
+        "KEY_TEMPERATURE": 0
+    },
     "capabilities": [
-        ""
+        "location"
     ],
     "companyName": "mutya.aller@gmail.com",
     "enableMultiJS": false,
@@ -10,8 +13,8 @@
     "resources": {
         "media": [
             {
-                "file": "images/unruly_logo.png",
-                "name": "IMAGE_UNRULY_LOGO",
+                "file": "images/unruly-logo.png",
+                "name": "IMAGE_UNRULY_ORIGINAL",
                 "targetPlatforms": [
                     "aplite",
                     "basalt",
@@ -20,8 +23,8 @@
                 "type": "png"
             },
             {
-                "file": "fonts/UbuntuMono-B.ttf",
-                "name": "FONT_UBUNTUMONO_20",
+                "file": "fonts/ubuntu-mono-b.ttf",
+                "name": "FONT_UBUNTUMONO_18",
                 "targetPlatforms": [
                     "aplite",
                     "basalt",
@@ -30,16 +33,22 @@
                 "type": "font"
             },
             {
-                "file": "images/background.png",
-                "name": "IMAGE_BACKGROUND",
-                "targetPlatforms": null,
-                "type": "png"
-            },
-            {
-                "file": "fonts/perfect-dos-vga.ttf",
-                "name": "FONT_PERFECT_DOS_20",
+                "file": "fonts/schablonierschrift-cracked.ttf",
+                "name": "FONT_CRACKED_20",
                 "targetPlatforms": null,
                 "type": "font"
+            },
+            {
+                "file": "fonts/schablonierschrift-cracked.ttf",
+                "name": "FONT_CRACKED_45",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "images/panda.png",
+                "name": "IMAGE_PANDA_WAVE",
+                "targetPlatforms": null,
+                "type": "png"
             },
             {
                 "file": "fonts/perfect-dos-vga.ttf",
@@ -48,14 +57,8 @@
                 "type": "font"
             },
             {
-                "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
-                "name": "FONT_CRACKED_50",
-                "targetPlatforms": null,
-                "type": "font"
-            },
-            {
-                "file": "fonts/DIN_Schablonierschrift_Cracked.ttf",
-                "name": "FONT_CRACKED_20",
+                "file": "fonts/perfect-dos-vga.ttf",
+                "name": "FONT_PERFECT_DOS_16",
                 "targetPlatforms": null,
                 "type": "font"
             }
@@ -69,7 +72,7 @@
         "chalk"
     ],
     "uuid": "7673530b-bf5f-4dd1-ab8a-71379847ced6",
-    "versionLabel": "1.0",
+    "versionLabel": "2.0",
     "watchapp": {
         "watchface": true
     }
