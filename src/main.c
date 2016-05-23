@@ -30,6 +30,7 @@ static void update_time() {
 }
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
+  update_time();
   // Get weather update every 30 minutes
   if(tick_time->tm_min % 30 == 0) {
     // Begin dictionary

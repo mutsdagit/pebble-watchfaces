@@ -13,6 +13,16 @@
     "resources": {
         "media": [
             {
+                "file": "data/panda-waving.png",
+                "name": "IMAGE_PANDA_ANIMATION",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "raw"
+            },
+            {
                 "file": "images/unruly-logo.png",
                 "name": "IMAGE_UNRULY_ORIGINAL",
                 "targetPlatforms": [
